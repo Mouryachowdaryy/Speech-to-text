@@ -1,7 +1,6 @@
-
 🎙️ Speech to Text Converter (Jupyter Notebook)
 
-A simple and interactive Jupyter Notebook application that lets you **record or upload audio** and instantly convert speech to text using Python’s `speech_recognition` library.
+A simple and interactive Jupyter Notebook application that allows you to **record audio using your microphone** and instantly convert speech to text using Python’s `speech_recognition` library.
 
  🚀 Quick Start
 
@@ -13,7 +12,8 @@ Make sure you have Python and Jupyter Notebook installed. Then install the requi
 pip install speechrecognition pyaudio
 ```
 
-> ⚠️ For Windows: If `pyaudio` fails, try installing via `.whl` file from [https://www.lfd.uci.edu/\~gohlke/pythonlibs/#pyaudio](https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyaudio)
+> ⚠️ For Windows: If `pyaudio` fails, install it using a `.whl` file from:
+> [https://www.lfd.uci.edu/\~gohlke/pythonlibs/#pyaudio](https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyaudio)
 
  2. Open the Notebook
 
@@ -21,48 +21,46 @@ pip install speechrecognition pyaudio
 jupyter notebook
 ```
 
-Open `speech to text.ipynb` in your browser.
+Open the `speech to text.ipynb` file in your browser.
 
----
 
  3. Run the Cells
 
-Click **Run All** or run each cell step by step.
+* Run all cells in order
+* Speak clearly into your microphone when prompted
+* Get instant transcription directly in the notebook
 
-* 📁 Upload an audio file (or)
-* 🎤 Record using microphone
-* ✅ Get instant transcription in text form
 
  🎯 Features
 
-* 🔊 Record speech using your system’s microphone
-* 📂 Upload `.wav` audio files for transcription
-* ✨ Real-time speech recognition using `SpeechRecognition`
-* 🧠 Converts speech into clean, readable text
-* 🧪 Works directly from Jupyter – no external UI needed
+* 🎤 Record speech using your system’s microphone
+* 🧠 Uses Google Web Speech API via `speech_recognition`
+* 📝 Instantly converts spoken words into clean text
+* 🧪 Fully interactive inside Jupyter Notebook
+
+---
 
 🛠️ How It Works
 
-🎧 Input
+ 🎧 Input
 
-* Use `speech_recognition.Microphone()` for live recording
-* Use `speech_recognition.AudioFile()` for uploaded `.wav` file
+* Uses `speech_recognition.Microphone()` to capture audio from your mic
 
-⚙️ Processing
+ ⚙️ Processing
 
-* Audio is processed using:
+* Captures a short audio snippet and converts it to text using:
 
   ```python
   recognizer.recognize_google(audio)
   ```
-* Uses Google Web Speech API (free, online)
 
-📝 Output
+ 📝 Output
 
-* Final text is printed in the notebook
-* Handles common errors like silence or recognition failure
+* Recognized speech is printed in real-time in the notebook
+* Displays an error message if speech is unclear or if connection fails
 
- 📂 Repository Structure
+
+📂 Repository Structure
 
 ```
 speech-to-text/
